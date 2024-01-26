@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  
+  .animated-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: pulse 1s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+  
+  .pelyhek {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #fff; /* Kezdeti szín a pelyheknek */
+    border-radius: 50%;
+    opacity: 0.8; /* Átlátszóság beállítása */
+    animation: szinValtozas 3s infinite alternate, pelyhLebeges 5s infinite linear; /* Animációk a színváltozáshoz és a lebegéshez */
+  }
+  
+  
+  
