@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fájl Beolvasás</title>
+    <link rel="stylesheet" href="alap.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+		
+		header {
+    height: px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Középre igazítás Flexbox segítségével */
+    align-items: center; /* Középre igazítás Flexbox segítségével */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        main {
+            margin: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        main div {
+            width: 45%;
+            border: 1px solid #000; /* Fekete keret hozzáadása */
+            border-radius: 10px; /* Kerekítés a 3D-s hatáshoz */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 3D-s árnyékeffektus */
+            padding: 15px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result-container {
+            background-color: rgb(255, 255, 255);
+            padding: 10px;
+            display: none;
+            color: rgb(0, 0, 0);
+        }
+
+        #result {
+            margin-top: 10px;
+            font-family: monospace;
+        }
+
+        .explanation {
+            width: 45%;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fájl Beolvasás</h1>
+    </header>
+
+    <main>
+        <div>
+            <h1>Fájl beolvasása</h1>
+            <p>Itt egy példa a fájl beolvasásáról:</p>
+            <p>f=open("példa.txt","r",encoding="utf-8")</p>
+            <button onclick="toggleResult()">Eredmény</button>
+            <div id="result" class="result-container"></div>
+        </div>
+
+        <div class="explanation">
+            <h1>Magyarázat</h1>
+            <p>Ez a kód egy példa a Python fájl beolvasására.</p>
+            <p>
+				Az f=open("példa.txt","r",encoding="utf-8") Python kód azt jelenti, hogy megnyitunk egy "példa.txt" nevű fájlt olvasási módban ("r"), azaz a meglévő tartalmát olvashatjuk. Az encoding="utf-8" rész azt biztosítja, hogy a fájlban található karaktereket megfelelően értelmezze, különösen akkor, ha nem ASCII karakterek is szerepelnek benne</p>
+        </div>
+    </main>
+
+    <footer>
+        <p><a href="Igazi index.html">Vissza</a></p>
+    </footer>
+
+    <script>
+        var resultVisible = False;
+
+        function toggleResult() {
+            var resultDiv = document.getElementById('result');
+            resultVisible = !resultVisible;
+
+            if (resultVisible) {
+                // Python code for file reading
+                var pythonCode = 'f=open("példa.txt","r",encoding="utf-8")';
+                // Example result
+                var result = 'Ez lenne a fájl tartalma...';
+                
+                resultDiv.innerHTML = '<strong>Python kód eredménye:</strong><br>' + result;
+                resultDiv.style.display = 'block';
+            } else {
+                resultDiv.innerHTML = '';
+                resultDiv.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
